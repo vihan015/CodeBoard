@@ -1,4 +1,5 @@
-import { Hand, MousePointer2} from 'lucide-react'
+import { Hand, MousePointer2, Image, Lock, LockOpen} from 'lucide-react'
+
 const TOOLS = [
   ['select', MousePointer2, 'Select (V)'],
   ['hand', Hand, 'Pan (H or hold Space)'],
@@ -42,7 +43,7 @@ export default function Toolbar({ tool, lock, onTool, onLock, onImage }) {
         title="Insert image (or paste with Ctrl+V)"
         onClick={onImage}
       >
-        🖼
+        <Image size={16} />
       </button>
 
       <button
@@ -50,7 +51,7 @@ export default function Toolbar({ tool, lock, onTool, onLock, onImage }) {
         title="Keep tool active after drawing (Q)"
         onClick={onLock}
       >
-        {lock ? '🔒' : '🔓'}
+        {lock ? <Lock size={16} /> : <LockOpen size={16} />}
       </button>
     </div>
   )
